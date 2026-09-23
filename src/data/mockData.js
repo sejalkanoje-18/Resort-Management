@@ -140,3 +140,4 @@ export const weeklyOccupancy = [
   { day: 'Sat', rooms: 100 },
   { day: 'Sun', rooms: 94 },
 ]
+

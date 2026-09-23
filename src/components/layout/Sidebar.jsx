@@ -10,12 +10,20 @@ import {
 } from 'lucide-react'
 
 const ownerNav = [
-  { to: '/owner', label: 'Dashboard', icon: LayoutDashboard },
-  { to: '/owner/resorts', label: 'Resort Overview', icon: Building2 },
-  { to: '/owner/revenue', label: 'Revenue & P&L', icon: CreditCard },
-  { to: '/owner/reports', label: 'Reports & Analytics', icon: BarChart3 },
-  { to: '/owner/staff', label: 'Staff Overview', icon: Users },
-  { to: '/owner/settings', label: 'Settings', icon: Settings },
+  { to: '/owner', label: 'Executive Dashboard', icon: LayoutDashboard },
+  {
+    label: 'Configuration',
+    icon: Shield,
+    children: [
+      { to: '/owner/resorts', label: 'Resort Setup', icon: Building2 },
+      { to: '/owner/permissions', label: 'Roles & Permissions', icon: UserCog },
+      { to: '/owner/accounts', label: 'Account Management', icon: Users },
+    ]
+  },
+  { to: '/owner/revenue', label: 'Financial Visibility', icon: CreditCard },
+  { to: '/owner/reports', label: 'Business Reports', icon: BarChart3 },
+  { to: '/owner/audit', label: 'Audit & Security', icon: ClipboardList },
+  { to: '/owner/settings', label: 'System Settings', icon: Settings },
 ]
 
 const managementNav = [

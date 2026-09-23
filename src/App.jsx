@@ -9,12 +9,14 @@ import Login       from './pages/auth/Login'
 import GuestLogin  from './pages/guest/GuestLogin'
 
 // Owner
-import OwnerDashboard from './pages/owner/OwnerDashboard'
-import OwnerResorts   from './pages/owner/OwnerResorts'
-import OwnerRevenue   from './pages/owner/OwnerRevenue'
-import OwnerReports   from './pages/owner/OwnerReports'
-import OwnerStaff     from './pages/owner/OwnerStaff'
-import OwnerSettings  from './pages/owner/OwnerSettings'
+import OwnerDashboard   from './pages/owner/OwnerDashboard'
+import OwnerResorts     from './pages/owner/OwnerResorts'
+import OwnerPermissions from './pages/owner/OwnerPermissions'
+import OwnerAccounts    from './pages/owner/OwnerAccounts'
+import OwnerRevenue     from './pages/owner/OwnerRevenue'
+import OwnerReports     from './pages/owner/OwnerReports'
+import OwnerAudit       from './pages/owner/OwnerAudit'
+import OwnerSettings    from './pages/owner/OwnerSettings'
 
 // Management Dashboard
 import ManagementDashboard from './pages/management/ManagementDashboard'
@@ -122,12 +124,15 @@ function AppRoutes() {
           <AppLayout />
         </ProtectedRoute>
       }>
-        <Route index           element={<OwnerDashboard />} />
-        <Route path="resorts"  element={<OwnerResorts />} />
-        <Route path="revenue"  element={<OwnerRevenue />} />
-        <Route path="reports"  element={<OwnerReports />} />
-        <Route path="staff"    element={<OwnerStaff />} />
-        <Route path="settings" element={<OwnerSettings />} />
+        <Route index               element={<OwnerDashboard />} />
+        <Route path="resorts"      element={<OwnerResorts />} />
+        <Route path="permissions"  element={<OwnerPermissions />} />
+        <Route path="accounts"     element={<OwnerAccounts />} />
+        <Route path="revenue"      element={<OwnerRevenue />} />
+        <Route path="reports"      element={<OwnerReports />} />
+        <Route path="audit"        element={<OwnerAudit />} />
+        <Route path="staff"        element={<Navigate to="/owner/accounts" replace />} />
+        <Route path="settings"     element={<OwnerSettings />} />
       </Route>
 
       {/* ── Management ───────────────────────────────────── */}
@@ -189,7 +194,7 @@ function AppRoutes() {
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <AppRoutes />
       </BrowserRouter>
     </AuthProvider>
