@@ -52,7 +52,17 @@ import GuestFeedback     from './pages/guest/GuestFeedback'
 
 // ── Route Guards ──────────────────────────────────────────────────────────────
 function ProtectedRoute({ children, allowedRoles }) {
-  const { user } = useAuth()
+  const { user, loading } = useAuth()
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center text-slate-300">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-sm font-medium">Loading session...</p>
+        </div>
+      </div>
+    )
+  }
   if (!user) return <Navigate to="/login" replace />
   if (allowedRoles && !allowedRoles.includes(user.role)) {
     const routes = { owner: '/owner', management: '/management', staff: '/staff', guest: '/guest' }
@@ -62,14 +72,34 @@ function ProtectedRoute({ children, allowedRoles }) {
 }
 
 function GuestProtectedRoute({ children }) {
-  const { user } = useAuth()
+  const { user, loading } = useAuth()
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center text-slate-300">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-sm font-medium">Loading session...</p>
+        </div>
+      </div>
+    )
+  }
   if (!user) return <Navigate to="/guest/login" replace />
   if (user.role !== 'guest') return <Navigate to="/" replace />
   return children
 }
 
 function DefaultRedirect() {
-  const { user } = useAuth()
+  const { user, loading } = useAuth()
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center text-slate-300">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-sm font-medium">Loading session...</p>
+        </div>
+      </div>
+    )
+  }
   if (!user)                      return <Navigate to="/login" replace />
   if (user.role === 'owner')      return <Navigate to="/owner" replace />
   if (user.role === 'management') return <Navigate to="/management" replace />

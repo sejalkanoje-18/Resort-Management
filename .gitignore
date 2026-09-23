@@ -1,1 +1,7 @@
 node_modules
+server/node_modules
+dist
+*.sqlite
+.env
+.env.local
+.DS_Store
