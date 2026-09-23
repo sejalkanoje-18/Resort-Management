@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-resort-dark text-resort-text font-sans;
+    margin: 0;
+    padding: 0;
+    background:
+      radial-gradient(circle at top left, rgba(215, 168, 76, 0.10), transparent 32rem),
+      linear-gradient(135deg, #07110f 0%, #0b1514 44%, #102522 100%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-resort-slate;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-resort-accent rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-400;
+  }
+}
+
+@layer components {
+  .luxury-card {
+    @apply bg-card-gradient border border-resort-border rounded-xl shadow-card;
+  }
+
+  .gold-text {
+    @apply text-resort-accent font-semibold;
+  }
+
+  .luxury-btn {
+    @apply bg-resort-accent hover:bg-gold-600 text-resort-dark font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 shadow-gold hover:shadow-lg;
+  }
+
+  .luxury-btn-outline {
+    @apply border border-resort-accent text-resort-accent hover:bg-resort-accent hover:text-resort-dark font-semibold px-5 py-2.5 rounded-lg transition-all duration-200;
+  }
+
+  .luxury-input {
+    @apply bg-resort-dark/40 border border-resort-border text-resort-text placeholder-resort-muted rounded-lg px-4 py-2.5 w-full focus:outline-none focus:border-resort-accent focus:ring-1 focus:ring-resort-accent transition-colors;
+  }
+
+  .luxury-select {
+    @apply bg-resort-dark/40 border border-resort-border text-resort-text rounded-lg px-4 py-2.5 w-full focus:outline-none focus:border-resort-accent focus:ring-1 focus:ring-resort-accent transition-colors;
+  }
+
+  .stat-card {
+    @apply luxury-card p-6 flex flex-col gap-2 animate-fade-in;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-resort-muted hover:text-resort-text hover:bg-resort-slate/80 transition-all duration-200 cursor-pointer text-sm font-medium;
+  }
+
+  .nav-item.active {
+    @apply bg-resort-accent/10 text-resort-accent border-l-2 border-resort-accent;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-gold {
+    @apply badge bg-gold-500/20 text-gold-400;
+  }
+
+  .badge-green {
+    @apply badge bg-emerald-500/20 text-emerald-400;
+  }
+
+  .badge-red {
+    @apply badge bg-red-500/20 text-red-400;
+  }
+
+  .badge-blue {
+    @apply badge bg-blue-500/20 text-blue-400;
+  }
+
+  .badge-purple {
+    @apply badge bg-purple-500/20 text-purple-400;
+  }
+
+  .badge-yellow {
+    @apply badge bg-yellow-500/20 text-yellow-400;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-500/20 text-gray-400;
+  }
+
+  .table-luxury {
+    @apply w-full text-sm;
+  }
+
+  .table-luxury thead tr {
+    @apply border-b border-resort-border;
+  }
+
+  .table-luxury thead th {
+    @apply text-left py-3 px-4 text-resort-muted font-medium uppercase tracking-wider text-xs;
+  }
+
+  .table-luxury tbody tr {
+    @apply border-b border-resort-border/50 hover:bg-resort-slate/50 transition-colors;
+  }
+
+  .table-luxury tbody td {
+    @apply py-3 px-4 text-resort-text;
+  }
+
+  .section-title {
+    @apply font-serif text-2xl text-resort-text font-semibold;
+  }
+
+  .section-subtitle {
+    @apply text-resort-muted text-sm mt-1;
+  }
+
+  .page-header {
+    @apply flex items-center justify-between mb-6;
+  }
+
+  .divider-gold {
+    @apply border-t border-resort-accent/30 my-4;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl;
+  }
+
+  .image-panel {
+    @apply relative overflow-hidden rounded-xl border border-resort-border;
+  }
+
+  .image-panel::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(180deg, transparent 15%, rgba(7,17,15,0.78) 100%);
+  }
+}
