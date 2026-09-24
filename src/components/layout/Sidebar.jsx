@@ -6,7 +6,7 @@ import {
   LayoutDashboard, Building2, BedDouble, CalendarCheck, Users, SprayCan,
   Wrench, Receipt, BarChart3, Settings, UserCog, ClipboardList, LogOut,
   ChevronDown, ChevronRight, Crown, Briefcase, UserCheck, Dumbbell,
-  UtensilsCrossed, Leaf, CreditCard, Shield, Bell, X
+  UtensilsCrossed, Leaf, CreditCard, Shield, Bell, X, Tag, MessageSquare
 } from 'lucide-react'
 
 const ownerNav = [
@@ -35,6 +35,8 @@ const managementNav = [
   { to: '/management/housekeeping', label: 'Housekeeping', icon: SprayCan },
   { to: '/management/maintenance', label: 'Maintenance', icon: Wrench },
   { to: '/management/billing', label: 'Billing & Payments', icon: Receipt },
+  { to: '/management/offers', label: 'Offers & Promotions', icon: Tag },
+  { to: '/management/reviews', label: 'Reviews & Complaints', icon: MessageSquare },
   { to: '/management/reports', label: 'Reports', icon: BarChart3 },
   {
     label: 'Administration',

@@ -29,6 +29,8 @@ import GuestsModule       from './pages/modules/GuestsModule'
 import HousekeepingModule from './pages/modules/HousekeepingModule'
 import MaintenanceModule  from './pages/modules/MaintenanceModule'
 import BillingModule      from './pages/modules/BillingModule'
+import OffersModule       from './pages/modules/OffersModule'
+import ReviewsModule      from './pages/modules/ReviewsModule'
 import ReportsModule      from './pages/modules/ReportsModule'
 import UsersModule        from './pages/modules/UsersModule'
 import PermissionsModule  from './pages/modules/PermissionsModule'
@@ -149,6 +151,8 @@ function AppRoutes() {
         <Route path="housekeeping" element={<HousekeepingModule />} />
         <Route path="maintenance"  element={<MaintenanceModule />} />
         <Route path="billing"      element={<BillingModule />} />
+        <Route path="offers"       element={<OffersModule />} />
+        <Route path="reviews"      element={<ReviewsModule />} />
         <Route path="reports"      element={<ReportsModule />} />
         <Route path="users"        element={<UsersModule />} />
         <Route path="permissions"  element={<PermissionsModule />} />
